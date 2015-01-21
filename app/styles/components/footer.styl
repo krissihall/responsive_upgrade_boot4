@@ -1,0 +1,75 @@
+footer
+  .links
+    ul
+      margin 0
+      padding 0
+      list-style none
+      li
+        margin ($padding-base-horizontal * 2) 0
+        padding 0
+        font-size-to-em(20)
+        &:first-of-type
+          margin-top 0
+        &:last-of-type
+          margin-bottom 0
+        a
+          text-decoration none
+          text-transform uppercase
+        .glyphicon,
+        .aeoicon
+          width 5%
+    &.links1
+      .links-signup
+        li
+          margin ($padding-base-horizontal * 3) 0
+          &:first-of-type
+            margin-top 0
+          &:last-of-type
+            margin-bottom 0
+        small
+          display block
+          margin-left 6%
+          width 50%
+          max-width 180px
+          .credit-card-links
+            display block
+            a
+              text-decoration underline
+
+    &.links2
+      .links-about-aeo
+        padding-top ($padding-base-horizontal * 2)
+        li
+          margin $padding-base-vertical 0
+          font-size-to-em(17)
+          &:first-of-type
+            margin-top 0
+          &:last-of-type
+            margin-bottom 0
+
+    &.links3
+      .links-contact-us
+        li
+          margin (($padding-base-vertical * 3) / 2)
+          font-size-to-em(17)
+          &:first-of-type
+            margin-top 0
+            font-size-to-em(20)
+          &:last-of-type
+            margin-bottom 0
+      .social-media
+        margin-top ($padding-large-horizontal * 2)
+        h4
+          font-size-to-em(17)
+          text-transform uppercase
+        .aeoicon,
+        .glyphicon
+          font-size-to-em(35)
+        .hash
+          margin-top $padding-base-horizontal
+          text-decoration none
+          font-size-to-em(17)
+            
+  .copyright
+    font-size-to-em(18)
+    margin ($padding-base-horizontal * 3) 0 $padding-base-horizontal

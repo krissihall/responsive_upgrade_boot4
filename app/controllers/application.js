@@ -1,12 +1,23 @@
 import Ember from 'ember';
 import jQuery from 'jquery';
 
+var breakPointNames = ['Xtr-Small', 'Small', 'Medium', 'Large'];
+
 export default Ember.Controller.extend({
+
+  breakPoint: 'Large',
 
   marginTop: 0,
   marginBottom: 0,
   marginRight: 0,
   marginLeft: 0,
+
+  xtrSmallBreak: 480,
+  smallBreak: 768,
+  mediumBreak: 992,
+  largeBreak: 1200,
+
+  breakPointName: 'Large',
 
   isNavigationOpen: false,
   isBagOpen: false,
@@ -35,6 +46,22 @@ export default Ember.Controller.extend({
   bindResizeEvent: function() {
     jQuery(window).on('resize', Ember.run.bind(this, this.handleResize));
   }.on('init'),
+
+  isBreakPointNameChanged: function(){
+    var windowWidth = this.get('windowWidth');
+
+    if(windowWidth <= this.get('xtrSmallBreak')){
+      this.set('breakPointName', 'Xtr-Small');
+    } else if(windowWidth > this.get('xtrSmallBreak')
+      && windowWidth <= this.get('smallBreak')){
+      this.set('breakPointName', 'Small');
+    } else if(windowWidth > this.get('smallBreak')
+      && windowWidth <= this.get('mediumBreak')){
+      this.set('breakPointName', 'Medium');
+    } else if(windowWidth > this.get('mediumBreak')){
+      this.set('breakPointName', 'Large');
+    }
+  }.observes('windowWidth'),
 
   bodyMargins: function(dir, margin) {
     this.set("margin" + dir.capitalize(), margin);
@@ -96,16 +123,16 @@ export default Ember.Controller.extend({
           sizePixel = this.get('windowWidth');
 
       if(size === 'small'){
-        sizePixel = 768;
+        sizePixel = this.get('smallBreak');
       } else if(size === 'xtrSmall') {
-        sizePixel = 480;
+        sizePixel = this.get('xtrSmallBreak');
       } else if(size === 'medium'){
-        sizePixel = 992;
+        sizePixel = this.get('mediumBreak');
       } else if(size === 'large'){
-        sizePixel = 1200;
+        sizePixel = this.get('largeBreak');
       }
       
-      var newWindow = window.open(route, '', 'height=' + this.get('windowHeight') + ', width=' + sizePixel + '');
+      var newWindow = window.open(route, '', 'height=' + this.get('windowHeight') + ', width=' + sizePixel + 'px');
       newWindow.focus();
     },
 
@@ -113,7 +140,8 @@ export default Ember.Controller.extend({
       var self = this;
 
       if(setting === 'fluid'){
-        this.set('isFluidLayout', true);      } else {
+        this.set('isFluidLayout', true);
+      } else {
         this.set('isFluidLayout', false);
       }
 

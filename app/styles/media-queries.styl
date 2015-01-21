@@ -8,7 +8,8 @@
   .homepage-grid
     .grid-item
       min-height 150px
-      margin $padding-base-vertical
+      margin-top $padding-base-vertical
+      margin-bottom $padding-base-vertical
 
 @media screen and (max-width: $screen-sm)
   .navigation-open-bg
@@ -64,3 +65,17 @@
         display block
     .nav
       top 0
+  footer
+    .links
+      ul
+        li
+          a
+            display block
+            width 100%
+      &.links1
+        .links-signup
+          li
+            margin ($padding-base-horizontal * 2) 0
+      &.links3
+        .social-media
+          margin-top $padding-base-horizontal

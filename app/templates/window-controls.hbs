@@ -11,9 +11,12 @@
   </div>
 
   <div class="window-content">
-    <div class="window-settings clearfix">
-      <div class="col-xs-6 window-settings-width">Width: {{windowWidth}}</div>
-      <div class="col-xs-6 window-settings-layout">
+    <div class="window-settings row clearfix">
+      <div class="col-xs-4 window-settings-breakpoint">
+        Breakpoint: {{breakPointName}}
+      </div>
+      <div class="col-xs-4 window-settings-width">Width: {{windowWidth}}</div>
+      <div class="col-xs-4 window-settings-layout">
         Container:
         {{#if isFluidLayout}}
           Fluid
