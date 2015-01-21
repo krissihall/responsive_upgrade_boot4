@@ -1,0 +1,103 @@
+/**
+styles/components/slide-in.styl
+
+Styles for slide-in component defined in components/slide-in.js.
+*/
+
+/*
+translates Mixin used as follows:
+
+translates(xAxis, yAxis)
+*/
+
+/* .slide-in class is placed on slide-in elt by the component. */
+.slide-in
+  position fixed
+  -webkit-transition transform 800ms
+  transition transform 800ms
+  background white
+  overflow-y scroll
+  z-index 9999
+
+  /* The 'full' parameter makes the slide-in occupy the whole screen. */
+  &.slide-in-full
+    width 100%
+    height 100%
+
+  /* VERTICAL */
+  &.slide-in-dir-up
+    width 100%
+    bottom 0
+    left 0
+    translates(0,100%)
+    &.slide-in90
+      width 100%
+      height 90%
+    &.slide-in-open
+      -webkit-box-shadow 0 -10px 19px -9px rgba(0,0,0,0.71)
+      -moz-box-shadow 0 -10px 19px -9px rgba(0,0,0,0.71)
+      box-shadow 0 -10px 19px -9px rgba(0,0,0,0.71)
+      transition()
+
+  &.slide-in-dir-down
+    width 100%
+    top 0
+    left 0
+    translates(0,-100%)
+    &.slide-in90
+      width 100%
+      height 90%
+    &.slide-in-open
+      -webkit-box-shadow 0 10px 19px -9px rgba(0,0,0,0.71)
+      -moz-box-shadow 0 10px 19px -9px rgba(0,0,0,0.71)
+      box-shadow 0 10px 19px -9px rgba(0,0,0,0.71)
+      transition()
+
+  /* HORIZONTAL */
+  &.slide-in-dir-right
+    height 100%
+    top 0
+    left 0
+    translates(-100%,0)
+    transition()
+    &.slide-in90
+      width 87.5%
+      height 100%
+    &.slide-in-open
+      -webkit-box-shadow 10px 0 19px -9px rgba(0,0,0,0.71)
+      -moz-box-shadow 10px 0 19px -9px rgba(0,0,0,0.71)
+      box-shadow 10px 0 19px -9px rgba(0,0,0,0.71)
+      transition()
+
+  &.slide-in-dir-left
+    height 100%
+    right 0
+    top 0
+    translates(100%,0)
+    &.slide-in90
+      width 87.5%
+      height 100%
+    &.slide-in-open
+      -webkit-box-shadow -10px 0 19px -9px rgba(0,0,0,0.71)
+      -moz-box-shadow -10px 0 19px -9px rgba(0,0,0,0.71)
+      box-shadow -10px 0 19px -9px rgba(0,0,0,0.71)
+      transition()
+
+
+  /* If slide-in is open, remove translations */
+  &.slide-in-open
+    translates(0,0)
+
+/* The class `.application-view` is created by the application view,
+which can adjust its margins to match slide-in behavior.
+The slide-in component is given the `adjust` parameter, mapped
+to an action which takes `dir` and `px`, such as ApplicationRoute#bodyMargins.
+This in turn calls ApplicationController#bodyMargins, which actually sets the margins.
+Here what we want to do is set transitions for them.
+*/
+
+.application-view
+  -webkit-transition margin-left 800ms, margin-top 800ms, margin-right 800ms, margin-bottom 800ms
+  transition margin-left 800ms, margin-top 800ms, margin-right 800ms, margin-bottom 800ms
+  width 100%
+

@@ -1,3 +1,6 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+<div {{bind-attr class="isFluidLayout:container-fluid:container"}}>
+  {{partial 'header'}}
+  {{outlet}}
+  {{partial 'footer'}}
+</div>
+{{view 'window-controls'}}

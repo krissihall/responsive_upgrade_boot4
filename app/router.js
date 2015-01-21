@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource("index", {
+    path: "/"
+  });
+  this.route("cart");
 });
 
 export default Router;

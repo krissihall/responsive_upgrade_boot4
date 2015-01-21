@@ -1,0 +1,115 @@
+/*TODO Move these variables to variable.styl and update grunt to compile using these variables. MW-1238*/
+
+//
+// Variables
+// --------------------------------------------------
+
+//== Setting Variables
+support-for-ie ?= true
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base =             #000;
+$gray-darker =           lighten($gray-base, 13.5%); // #222
+$gray-dark =             #737373;
+$gray =                  #444;
+$gray-light =            #7a7a7a;
+$gray-lighter =          #a1a1a1;
+$gray-lightest =         #f6f6f6;
+       
+//** This is the value used for the bottom border in headers and single-line rules
+$border-gray-light =     lighten($gray-lighter, 50%);
+
+$gray-disabled =         #d0d0d0;
+
+$brand-primary =         #001c41;
+$brand-success =         #5cb85c;
+$brand-info =            #9daae2;
+$brand-warning =         #f0ad4e;
+$brand-danger =          #ff0000;
+
+$aerie-primary =         #8ed2c5;
+$aerie-secondary =       #9daae2;
+
+$social-facebook =       #3b5998;
+$social-twitter =        #4099ff;
+$social-pinterest =      #c92228;
+$social-shopkick =       #0098D6;
+
+$brand-font =            "Gotham Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$medium-font =           "Gotham Medium";
+$bold-font =             "Gotham Bold";
+
+$screen-xs =             480px;
+$screen-sm =             768px;
+$screen-md =             992px;
+$screen-lg =             1200px;
+
+//## Font Sizing from Bootstrap
+$font-base =              22;
+
+$font-size-h1 =           1.818181818182em; // ~40px
+$font-size-h2 =           1.363636363636em; // ~30px
+$font-size-h3 =           1.363636363636em; // ~30px
+$font-size-h4 =           1.090909090909em; // ~24px
+$font-size-h5 =           1em; // ~22px
+$font-size-h6 =           .3636363636364em; // ~14px
+
+$font-size-large =        $font-size-h3;
+$font-size-small =        .7272727272727em; // ~16px
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical =     6px;
+$padding-base-horizontal =   12px;
+
+$padding-large-vertical =    10px;
+$padding-large-horizontal =  16px;
+
+$padding-small-vertical =    5px;
+$padding-small-horizontal =  10px;
+
+$padding-xs-vertical =       1px;
+$padding-xs-horizontal =     5px;
+
+
+font-size-to-em(size)
+  font-size unit((size / $font-base), em);
+
+navigation-transition()
+  transition left .5s ease-out, right .5s ease-out, opacity .5s ease;
+
+opacity(n)
+  -khtml-opacity n
+  -moz-opacity n
+  opacity n
+  if support-for-ie
+    -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')"')
+    filter unquote('alpha(opacity=' + round(n * 100) + ')')
+
+translates(xAxis, yAxis)
+  -ms-transform translate(xAxis, yAxis)
+  -webkit-transform translate(xAxis, yAxis)
+  transform translate(xAxis, yAxis)
+
+clearfix()
+  &:before,
+  &:after
+    content " "
+    display table
+  &:after
+    clear both
+
+box-sizing(type = border-box)
+  -webkit-box-sizing type
+  -moz-box-sizing type
+  box-sizing type
+
+transition()
+  -webkit-transition all .5s
+  -moz-transition all .5s
+  transition all .5s

@@ -1,0 +1,29 @@
+.window-controls
+  position fixed
+  bottom 0
+  right 0
+  left 0
+  z-index 10000
+  height auto
+  -webkit-transition transform 800ms
+  transition transform 800ms
+  &.is-collapsed
+    translates(0,100%);
+  font-size-to-em(16);
+  .window-expander
+    position absolute
+    top -20px
+    cursor pointer
+    a
+      padding 10px
+      text-decoration none
+  .window-content
+    background $gray-disabled
+    padding 10px
+  p
+    margin 0
+    padding 0
+
+.ember-application
+  -webkit-transition margin-left 800ms, margin-top 800ms, margin-right 800ms, margin-bottom 800ms
+  transition margin-left 800ms, margin-top 800ms, margin-right 800ms, margin-bottom 800ms

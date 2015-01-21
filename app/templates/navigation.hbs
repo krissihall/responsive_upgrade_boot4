@@ -1,0 +1,15 @@
+<a class="header-hamburger visible-xs-block hidden-sm" 
+    {{action 'isNavigationOpenSlideUp' 'isNavigationOpen'}}>
+  {{glyph-icon set='aeo' type='mdot-hamburger'}}
+</a>
+
+<div class="hidden-xs visible-sm-block visible-md-block visible-lg-block">
+  {{partial 'navigation-links'}}
+</div>
+
+{{#slide-in over=isNavigationOpen id="slide-in-xs-nav" dir="right" slideIn90=true disableBodyScroll=true}}
+  <a {{action 'isNavigationOpenSlideDown' 'isNavigationOpen'}} {{bind-attr class="isNavigationOpen:show:hide"}}>
+    {{glyph-icon set='aeo' type='mdot-hamburger'}}
+  </a>
+  {{partial 'navigation-links'}}
+{{/slide-in}}

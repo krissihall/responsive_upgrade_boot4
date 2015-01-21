@@ -1,0 +1,16 @@
+/*
+ * styles/components/overlay-message.styl
+ *
+ * Style overlay-message component.
+ */
+
+.overlay-message
+  display none
+
+  /**
+   * The overlay-message-show class is bound to the property of the same
+   * name in components/overlay-message.js, which is in turn bound to the
+   * 'show' parameter passed to the component.
+   */
+  &.overlay-message-show
+    display block

@@ -1,0 +1,66 @@
+@media screen and (max-width: $screen-xs)
+  .homepage-feature
+    min-height 300px
+    transition()
+  .homepage-slideshow
+    min-height 250px
+    transition()
+  .homepage-grid
+    .grid-item
+      min-height 150px
+      margin $padding-base-vertical
+
+@media screen and (max-width: $screen-sm)
+  .navigation-open-bg
+    background rgba(0,0,0,0.6)
+    position fixed
+    z-index 100
+    top 0
+    bottom 0
+    left 0
+    right 0
+    cursor pointer
+    transition()
+  .slide-in
+    overflow visible
+    transition()
+    .bag-count-icon
+      font-size 100%
+      position absolute
+      text-align center
+      color #fff
+      left -11%
+      display none
+      span
+        position relative
+        text-align center
+        font-size-to-em(54)
+      .bag-icon-count
+        font-size-to-em(18)
+        text-align center
+        position absolute
+        width 100%
+        height 100%
+        margin-bottom 0
+        top 34%
+        left 0
+        right 0
+      &:hover
+        text-decoration none
+    &.slide-in-open
+      .aeoicon-mdot-hamburger,
+      .bag-count-icon
+        color #fff
+        position absolute
+        text-align right
+        margin-top 1%
+      .aeoicon-mdot-hamburger
+        right -11%
+        width 100%
+      .bag-count-icon
+        left -11%
+        position absolute
+        top 0
+        display block
+    .nav
+      top 0

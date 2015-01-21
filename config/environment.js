@@ -16,6 +16,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'img-src': "'self' http://aeo-o.scene7.com/ https://aeo-o.scene7.com/",
+      'font-src': "'self' data:"
     }
   };
 

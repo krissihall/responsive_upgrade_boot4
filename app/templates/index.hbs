@@ -1,0 +1,33 @@
+<div class="promo-push-down bg-primary">
+  Free shipping + Additional 60% off AEO Clearance. <small><a {{action 'isPromoPushDownOpenSlideDown' 'isPromoPushDownOpen'}}>Details</a></small>
+</div>
+{{view 'homepage-feature'}}
+<div class="websclusive-styles">
+  <div class="hero-image">
+    <img src="/homepage/large-wide-shot.jpg" 
+        class="hidden-xs visible-sm-block visible-md-block visible-lg-block img-responsive" />
+    <img src="/homepage/small-tight-shot.jpg" 
+        class="hidden-sm visible-xs-block img-responsive" />
+  </div>
+  <h2>There's More Awesome Style Online</h2>
+  <h3>Shop 100's of Web Exclusive Styles &amp; Extended Sizes Only at ae.com</h3>
+  <div class="buttons">
+    <a class="btn btn-drop btn-sm">Shop Women</a>
+    <a class="btn btn-drop btn-sm">Shop Men</a>
+  </div>
+</div>
+
+{{view 'homepage-grid'}}
+
+{{#slide-in over=isPromoPushDownOpen id='promo-push-down-details' dir='down' disableBodyScroll=true}}
+  <div class="promo-details section">
+    <small class="close" {{action 'isPromoPushDownOpenSlideUp' 'isPromoPushDownOpen'}}>
+      Close {{glyph-icon type='mdot-close' set='aeo'}}
+    </small>
+    <h2>Take an Additional 60% Off AEO<sup>&reg;</sup> Clearance Merchandise</h2>
+    <p>Beginning January 15, 2015 at 6:00 AM EST for a limited time only receive an additional 60% off AEO® clearance merchandise when ordering online at ae.com or in Select US and Canada AEO® stores. Prices reflected in cart. Discount applied to merchandise costs only, prior to sales tax and shipping &amp; handling. This discount offer can be combined with other discount offers. This offer is not applicable toward previously purchased merchandise. Not valid on Gift Cards, or merchandise from these brands: Baggu, Bass, BC, Bed Stu, Birkenstock, CAT Footwear, Clarks, Creative Recreation, Dr. Martens, Durango, DV by Dolce Vita, Eastland, Fjallraven, Found My Animal, Glory/Goorin, GOLA, J.D.Fisk, Keds, Kim &amp; Zozi, Knot &amp; Bow, Lack of Color, Lulu DK, Matisse, Minnetonka, Muses &amp; Rebels, New Balance, Palladium, Pendleton, PF Flyers, Pommes Frites Candle Co., Reebok, Seychelles, The Urban Smith, Thorogood, Timberland, Tretorn, Volley, Wit &amp; Whistle, Woolrich, Word. and College &amp; Pro.</p>
+    <div class="disclaimer">
+      &copy; 2015 AEO Management Co. All Rights Reserved.
+    </div>
+  </div>
+{{/slide-in}}

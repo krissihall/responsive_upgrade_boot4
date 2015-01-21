@@ -1,0 +1,87 @@
+.promo-push-down
+  text-transform uppercase
+  text-align center
+  padding $padding-base-vertical $padding-base-horizontal
+  color #fff
+  margin 0
+  font-family $bold-font
+  font-size-to-em(20)
+  a
+    color #fff
+    text-decoration none
+    &:hover
+      background lighten($brand-primary, 30%)
+      
+.promo-details
+  .close
+    font-size-to-em(16)
+    text-align right
+  h2
+    border-bottom 1px solid $gray-disabled
+  p
+    font-size-to-em(16)
+  .disclaimer
+    font-size-to-em(12)
+    font-style italic
+    margin $padding-base-vertical 0
+
+.homepage-feature
+  background #cea
+  min-height 450px
+  transition()
+  
+.homepage-slideshow
+  margin $padding-base-horizontal 0
+  min-height 400px
+  transition()
+  .carousel-inner
+    min-height inherit
+    .item
+      min-height inherit
+      &.item1
+        background #ace
+      &.item2
+        background #eca
+      &.item3
+        background #cae
+        
+.websclusive-styles
+  margin $padding-base-horizontal $padding-base-horizontal
+  padding $padding-base-vertical $padding-base-horizontal
+  text-align center
+  .hero-image
+    width 100%
+  h2
+    color lighten(desaturate($brand-primary, 50%), 40%)
+    font-family $brand-font
+    text-transform uppercase
+    font-size-to-em(40)
+    margin $padding-base-vertical 0
+    padding 0
+    font-weight bold
+  h3
+    color $gray-light
+    font-family $brand-font
+    text-transform uppercase
+    padding 0
+    margin 0
+  .buttons
+    margin $padding-base-vertical 0
+    .btn
+      min-width 150px
+      
+.homepage-grid
+  margin $padding-base-horizontal 0
+  .grid-item
+    margin-top $padding-base-vertical
+    margin-bottom $padding-base-vertical
+    transition()
+    min-height 250px
+    &.grid-item1
+      background #eac
+    &.grid-item2
+      background #aec
+    &.grid-item3
+      background #cae
+    &.grid-item4
+      background #ace

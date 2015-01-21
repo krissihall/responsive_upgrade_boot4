@@ -1,0 +1,57 @@
+<div {{bind-attr class=':window-controls isExpanded:is-expanded:is-collapsed'}}>
+
+  <div class="window-expander">
+    <a {{action 'expandCollapse'}}>
+      {{#if isExpanded}}
+        {{glyph-icon set='aeo' type='Arrow_Down'}} <small>Collapse Controls</small>
+      {{else}}
+        {{glyph-icon set='aeo' type='arrow_Up'}} <small>Expand Controls</small>
+      {{/if}}
+    </a>
+  </div>
+
+  <div class="window-content">
+    <div class="window-settings clearfix">
+      <div class="col-xs-6 window-settings-width">Width: {{windowWidth}}</div>
+      <div class="col-xs-6 window-settings-layout">
+        Container:
+        {{#if isFluidLayout}}
+          Fluid
+        {{else}}
+          Fixed
+        {{/if}}
+      </div>
+    </div>
+    <div class="buttons-layout clearfix">
+      {{view 'layout-button' link='fluid' isActiveLayout=isFluidLayout}}
+      {{view 'layout-button' link='fixed' isActiveLayout=isFluidLayout}}
+    </div>
+
+    {{#overlay-message show=isLayoutChanged}}
+      <div class="alert alert-success alert-with-icon" role="alert">
+        <span class="aeoicon aeoicon-checkmark alert-icon"></span>
+        <div class="alert-message">
+          You have successfully changed the layout-style to
+          {{#if isFluidLayout}}
+            <strong>Fluid</strong>.
+          {{else}}
+            <strong>Fixed</strong>.
+          {{/if}}
+        </div>
+      </div>
+    {{/overlay-message}}
+
+    <div class="buttons-size clearfix">
+      <button class="btn btn-drop btn-xs col-xs-3"
+          {{action 'openSizedWindow' 'xtrSmall'}}>Xtr Small (xs)</button>
+      <button class="btn btn-drop btn-xs col-xs-3"
+          {{action 'openSizedWindow' 'small'}}>Small (sm)</button>
+      <button class="btn btn-drop btn-xs col-xs-3"
+          {{action 'openSizedWindow' 'medium'}}>Medium (md)</button>
+      <button class="btn btn-drop btn-xs col-xs-3"
+          {{action 'openSizedWindow' 'large'}}>Large (lg)</button>
+    </div>
+
+  </div>{{! window-content }}
+
+</div>{{! window-controls }}

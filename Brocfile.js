@@ -17,4 +17,49 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
+  destDir: '/assets'
+});
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
+// Add Gotham to /dist/fonts directory
+app.import('bower_components/bootstrap/dist/fonts/3452D1D72F9A741BD.eot', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/BAC25156F15053E7B.eot', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/DFC40F093C219AAEB.eot', {
+  destDir: 'fonts'
+});
+
+// Add Bootstrap Glyphicons to /dist/fonts directory
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
+  destDir: 'fonts'
+});
+
+// Add AEO Icon font to /dist/fonts directory
+app.import('bower_components/bootstrap/dist/fonts/aeoicons.eot', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/aeoicons.svg', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/aeoicons.ttf', {
+  destDir: 'fonts'
+});
+app.import('bower_components/bootstrap/dist/fonts/aeoicons.woff', {
+  destDir: 'fonts'
+});
+
 module.exports = app.toTree();

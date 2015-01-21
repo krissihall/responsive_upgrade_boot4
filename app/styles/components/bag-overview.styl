@@ -1,0 +1,27 @@
+.bag-overview
+  .items
+    .item
+      padding 0
+      .cart-item-img
+        position relative
+        z-index 1
+      .cart-item-details
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        z-index 2
+        padding $padding-base-vertical
+        background rgba(255,255,255,.75)
+        p
+          margin 0
+          padding 0
+          position relative
+          font-size-to-em(16)
+          &.price
+            font-size-to-em(20)
+            text-align right
+  .edit-bag
+    padding $padding-base-vertical
+    text-align right
+    font-size-to-em(18)
