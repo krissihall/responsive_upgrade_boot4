@@ -1,8 +1,6 @@
 import Ember from 'ember';
 import jQuery from 'jquery';
 
-var breakPointNames = ['Xtr-Small', 'Small', 'Medium', 'Large'];
-
 export default Ember.Controller.extend({
 
   breakPoint: 'Large',
