@@ -28,7 +28,7 @@
           </span>
         </small>
       </li>
-      <li class="hidden-sm visible-md-block visible-lg-block">
+      <li class="visible-xs-block hidden-sm visible-md-block visible-lg-block">
         <a>
           {{glyph-icon set='aeo' type='phones'}}
           Mobile App
@@ -50,15 +50,17 @@
   </div>
   <div class="links links2 col-xs-12 col-sm-6 col-md-4">
     <ul class="links-common">
-      <li class="visible-xs-block visible-sm-block hidden-md hidden-lg">
-        <a>
-          {{glyph-icon set='aeo' type='phones'}}
-          Mobile App
-        </a>
-        <small class="hidden-xs hidden-sm">
-          Shop &amp; get exclusive deals right from your phone.
-        </small>
-      </li>
+      {{#if isSmall}}
+        <li class="visible-xs-block visible-sm-block hidden-md hidden-lg">
+          <a>
+            {{glyph-icon set='aeo' type='phones'}}
+            Mobile App
+          </a>
+          <small class="hidden-xs hidden-sm">
+            Shop &amp; get exclusive deals right from your phone.
+          </small>
+        </li>
+      {{/if}}
       <li>
         <a>
           {{glyph-icon set='aeo' type='locator'}}

@@ -15,6 +15,11 @@ export default Ember.Controller.extend({
   mediumBreak: 992,
   largeBreak: 1200,
 
+  isXtrSmall: false,
+  isSmall: false,
+  isMedium: false,
+  isLarge: false,
+
   breakPointName: 'Large',
 
   isNavigationOpen: false,
@@ -47,19 +52,31 @@ export default Ember.Controller.extend({
 
   isBreakPointNameChanged: function(){
     var windowWidth = this.get('windowWidth');
+    this.resetAllSizes();
 
     if(windowWidth <= this.get('xtrSmallBreak')){
       this.set('breakPointName', 'Xtr-Small');
+      this.set('isXtrSmall', true);
     } else if(windowWidth > this.get('xtrSmallBreak')
       && windowWidth <= this.get('smallBreak')){
       this.set('breakPointName', 'Small');
+      this.set('isSmall', true);
     } else if(windowWidth > this.get('smallBreak')
       && windowWidth <= this.get('mediumBreak')){
       this.set('breakPointName', 'Medium');
+      this.set('isMedium', true);
     } else if(windowWidth > this.get('mediumBreak')){
       this.set('breakPointName', 'Large');
+      this.set('isLarge', true);
     }
   }.observes('windowWidth'),
+
+  resetAllSizes: function(){
+    this.set('isXtrSmall', false);
+    this.set('isSmall', false);
+    this.set('isMedium', false);
+    this.set('isLarge', false);
+  },
 
   bodyMargins: function(dir, margin) {
     this.set("margin" + dir.capitalize(), margin);
